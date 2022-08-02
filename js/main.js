@@ -1,4 +1,4 @@
-requestAnimationFrame([
+require([
     "esri/core/promiseUtils",
     "esri/identity/OAuthInfo",
     "esri/identity/IdentityManager",
