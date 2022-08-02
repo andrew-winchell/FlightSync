@@ -6,7 +6,7 @@ html, body {
     overflow: hidden;
 }
 
-#sceneView {
+#application, #sceneView {
     padding: 5px;
     height: calc(100% - 10px);
     width: calc(100% - 10px);
