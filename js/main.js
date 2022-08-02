@@ -4,11 +4,12 @@ require([
     "esri/identity/IdentityManager",
     "esri/Map",
     "esri/views/SceneView",
+    "esri/layers/GeoJSONLayer"
     "esri/layers/FeatureLayer",
     "esri/layers/TileLayer",
     "esri/layers/ElevationLayer",
     "esri/Basemap"
-], function (promiseUtils, OAuthInfo, esriID, Map, SceneView, FeatureLayer, TileLayer, ElevationLayer, Basemap) {
+], function (promiseUtils, OAuthInfo, esriID, Map, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, ElevationLayer, Basemap) {
 
     //OAuth certification process
     //Required to access secure content from AGOL
@@ -25,6 +26,11 @@ require([
         .then(() => {
             console.log("Sign in completed.")
         });
+
+    //airports geojson layer
+    const apts = new GeoJSONLayer({
+        url: "data/apts.geojson"
+    })
 
     //world topo basemap layer
     const basemap = new Basemap({
