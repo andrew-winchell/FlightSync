@@ -27,11 +27,6 @@ require([
             console.log("Sign in completed.")
         });
 
-    //airports geojson layer
-    const apts = new GeoJSONLayer({
-        url: "data/apts.geojson"
-    })
-
     //world topo basemap layer
     const basemap = new Basemap({
         baseLayers: [
@@ -58,4 +53,11 @@ require([
         center: [-98.5795, 39.8283],
         zoom: 5
     })
+
+    //airports geojson layer
+    const apts = new GeoJSONLayer({
+        url: "data/apts.geojson"
+    })
+
+    map.add(apts);
 })
