@@ -4,7 +4,7 @@ require([
     "esri/identity/IdentityManager",
     "esri/Map",
     "esri/views/SceneView",
-    "esri/layers/GeoJSONLayer"
+    "esri/layers/GeoJSONLayer",
     "esri/layers/FeatureLayer",
     "esri/layers/TileLayer",
     "esri/layers/ElevationLayer",
