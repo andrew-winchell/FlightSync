@@ -77,7 +77,7 @@ require([
 
     const timeSlider = new TimeSlider({
         container: "timeSliderDiv",
-        mode: instant,
+        mode: "instant",
         fullTimeExtent: {
             start: yesterday,
             end: tomorrow
