@@ -81,7 +81,8 @@ require([
         fullTimeExtent: {
             start: yesterday,
             end: tomorrow
-        }
+        },
+        stops: null
     })
 
     map.add(apts);
