@@ -25,7 +25,7 @@ require([
     esriID.getCredential(info.portalUrl + "/sharing");
     esriID.checkSignInStatus(info.portalUrl + "/sharing")
         .then(() => {
-            console.log("Sign in succesfful.")
+            console.log("Sign in successful.")
         });
 
     //world topo basemap layer
@@ -96,6 +96,7 @@ require([
 
     //scene.ui.add(timeSlider, "bottom-leading")
     timeSlider.stops = null;
+    timeSlider.viewModel.play();
 
     map.add(apts);
 })
