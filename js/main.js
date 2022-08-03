@@ -90,16 +90,12 @@ require([
         timeExtent: {
             start: today,
             end: today
-        }
+        },
+        playRate: 100
     });
 
     //scene.ui.add(timeSlider, "bottom-leading")
     timeSlider.stops = null;
-    timeSlider.set({
-        loop: true,
-        playRate: 100
-    });
-    timeSlider.play();
 
     map.add(apts);
 })
