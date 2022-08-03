@@ -79,8 +79,6 @@ require([
     tomorrow.setDate(tomorrow.getDate() + 1);
     tomorrow.setHours(23, 59, 59, 59);
 
-    console.log(today, yesterday, tomorrow)
-
     const timeSlider = new TimeSlider({
         container: "timeSliderDiv",
         mode: "instant",
@@ -93,8 +91,9 @@ require([
             start: today,
             end: today
         }
-    })
+    });
 
+    view.ui.add(timeSlider, "bottom-left")
     timeSlider.stops = null;
 
     map.add(apts);
