@@ -20,6 +20,6 @@ html, body {
   }
 
 /* hide the minor ticks on the timeslider */
-#timeSlider .esri-slider__tick.minorTick {
+#timeSlider .esri-time-slider__tick.minorTick {
     display: none;
 }
