@@ -25,7 +25,7 @@ require([
     esriID.getCredential(info.portalUrl + "/sharing");
     esriID.checkSignInStatus(info.portalUrl + "/sharing")
         .then(() => {
-            console.log("Sign in completed.")
+            console.log("Sign in succesfful.")
         });
 
     //world topo basemap layer
@@ -76,8 +76,8 @@ require([
     yesterday.setHours(0, 0, 0, 0);
 
     const tomorrow = new Date()
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    tomorrow.setHours(23, 59, 59, 59);
+    tomorrow.setDate(tomorrow.getDate() + 2);
+    tomorrow.setHours(0, 0, 0, 0);
 
     const timeSlider = new TimeSlider({
         container: "timeSliderDiv",
