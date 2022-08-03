@@ -11,3 +11,10 @@ html, body {
     height: calc(100% - 10px);
     width: calc(100% - 10px);
 }
+
+#timeSliderDiv {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 20px;
+  }
