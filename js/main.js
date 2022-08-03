@@ -73,12 +73,12 @@ require([
     const today = new Date();
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
-    yesterday.setUTCHours(0, 0, 0, 0);
+    yesterday.setHours(0, 0, 0, 0);
 
     const tomorrow = new Date(Date.now() + 86400000)
     tomorrow.setDate(tomorrow.getDate() - 1);
-    tomorrow.setUTCHours(23, 59, 59, 59);
-    
+    tomorrow.setHours(23, 59, 59, 59);
+
     console.log(today, yesterday, tomorrow)
 
     const timeSlider = new TimeSlider({
