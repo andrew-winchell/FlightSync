@@ -91,12 +91,14 @@ require([
             start: currentTime,
             end: currentTime
         },
-        playRate: 100
+        playRate: 50,
+        stops: {
+          interval: {
+            value: 1,
+            unit: "hours"
+          }
+        }
     });
-
-    //scene.ui.add(timeSlider, "bottom-leading")
-    timeSlider.stops = null;
-    timeSlider.viewModel.play();
 
     map.add(apts);
 })
