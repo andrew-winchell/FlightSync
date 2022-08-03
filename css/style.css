@@ -18,8 +18,3 @@ html, body {
     right: 5%;
     bottom: 20px;
   }
-
-/* hide the minor ticks on the timeslider */
-#timeSlider .esri-time-slider__tick.minorTick {
-    display: none;
-}
