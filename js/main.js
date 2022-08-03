@@ -84,9 +84,14 @@ require([
     const timeSlider = new TimeSlider({
         container: "timeSliderDiv",
         mode: "instant",
+        timeVisible: true,
         fullTimeExtent: {
             start: yesterday,
             end: tomorrow
+        },
+        timeExtent: {
+            start: today,
+            end: today
         }
     })
 
