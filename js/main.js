@@ -95,7 +95,7 @@ require([
         stops: {
           interval: {
             value: 1,
-            unit: "hours"
+            unit: "minutes"
           }
         }
     });
