@@ -93,7 +93,7 @@ require([
         }
     });
 
-    view.ui.add(timeSlider, "bottom-left")
+    scene.ui.add(timeSlider, "bottom-left")
     timeSlider.stops = null;
 
     map.add(apts);
