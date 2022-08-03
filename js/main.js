@@ -81,9 +81,10 @@ require([
         fullTimeExtent: {
             start: yesterday,
             end: tomorrow
-        },
-        stops: null
+        }
     })
+
+    timeSlider.stops = null;
 
     map.add(apts);
 })
