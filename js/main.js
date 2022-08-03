@@ -8,8 +8,9 @@ require([
     "esri/layers/FeatureLayer",
     "esri/layers/TileLayer",
     "esri/layers/ElevationLayer",
-    "esri/Basemap"
-], function (promiseUtils, OAuthInfo, esriID, Map, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, ElevationLayer, Basemap) {
+    "esri/Basemap",
+    "esri/widgets/TimeSlider"
+], function (promiseUtils, OAuthInfo, esriID, Map, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, ElevationLayer, Basemap, TimeSlider) {
 
     //OAuth certification process
     //Required to access secure content from AGOL
@@ -68,6 +69,16 @@ require([
     const flightPaths = new GeoJSONLayer({
         url: ""
     });
+
+    var today = new Date();
+    var yesterday = new Date(Date.now() - 86400000)
+    var tomorrow = new Date(Date.now() + 86400000)
+    console.log(today, yesterday, tomorrow)
+
+    const timeSlider = new TimeSlider({
+        container: "timeSliderDiv",
+        fullTimeExtent: 
+    })
 
     map.add(apts);
 })
