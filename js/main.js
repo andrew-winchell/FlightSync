@@ -95,10 +95,11 @@ require([
 
     //scene.ui.add(timeSlider, "bottom-leading")
     timeSlider.stops = null;
-
-    if (timeSlider.state === "ready") {
-        timeSlider.play();
-    }
+    timeSlider.set({
+        loop: true,
+        playRate: 100
+    });
+    timeSlider.play();
 
     map.add(apts);
 })
