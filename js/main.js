@@ -70,7 +70,7 @@ require([
         url: ""
     });
 
-    const today = new Date();
+    const currentTime = new Date();
     const startTime = new Date();
     startTime.setDate(startTime.getDate() - 1);
     startTime.setHours(0, 0, 0, 0);
@@ -88,8 +88,8 @@ require([
             end: endTime
         },
         timeExtent: {
-            start: today,
-            end: today
+            start: currentTime,
+            end: currentTime
         },
         playRate: 100
     });
