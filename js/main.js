@@ -59,6 +59,7 @@ require([
     const apts = new GeoJSONLayer({
         url: "data/apts.geojson"
     });
+    map.add(apts);
 
     //fixes geojson layer
     const fixes = new GeoJSONLayer({
@@ -70,7 +71,10 @@ require([
         url: ""
     });
 
+    //time extent variables for time slider widget
+    //72hr window from the current day; day before and day after to midnight
     const currentTime = new Date();
+
     const startTime = new Date();
     startTime.setDate(startTime.getDate() - 1);
     startTime.setHours(0, 0, 0, 0);
@@ -79,6 +83,7 @@ require([
     endTime.setDate(endTime.getDate() + 2);
     endTime.setHours(0, 0, 0, 0);
 
+    //time slider widget
     const timeSlider = new TimeSlider({
         container: "timeSliderDiv",
         mode: "instant",
@@ -99,6 +104,4 @@ require([
           }
         }
     });
-
-    map.add(apts);
 })
