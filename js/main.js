@@ -31,7 +31,7 @@ require([
     const basemap = new Basemap({
         baseLayers: [
             new TileLayer({
-                url: "https://wtb.maptiles.arcgis.com/arcgis/rest/services/World_Topo_Base/MapServer"
+                url: "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer" //"https://wtb.maptiles.arcgis.com/arcgis/rest/services/World_Topo_Base/MapServer"
             })
         ]
     });
@@ -52,12 +52,22 @@ require([
         map: map,
         center: [-98.5795, 39.8283],
         zoom: 5
-    })
+    });
 
     //airports geojson layer
     const apts = new GeoJSONLayer({
         url: "data/apts.geojson"
-    })
+    });
+
+    //fixes geojson layer
+    const fixes = new GeoJSONLayer({
+        url: ""
+    });
+
+    //flight paths geojson layer
+    const flightPaths = new GeoJSONLayer({
+        url: ""
+    });
 
     map.add(apts);
 })
