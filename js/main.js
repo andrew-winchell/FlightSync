@@ -7,9 +7,10 @@ require([
     "esri/layers/GeoJSONLayer",
     "esri/layers/FeatureLayer",
     "esri/layers/TileLayer",
+    "esri/layers/VectorTileLayer",
     "esri/layers/ElevationLayer",
     "esri/Basemap"
-], function (promiseUtils, OAuthInfo, esriID, Map, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, ElevationLayer, Basemap) {
+], function (promiseUtils, OAuthInfo, esriID, Map, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, VectorTileLayer, ElevationLayer, Basemap) {
 
     //OAuth certification process
     //Required to access secure content from AGOL
@@ -32,6 +33,9 @@ require([
         baseLayers: [
             new TileLayer({
                 url: "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer" //"https://wtb.maptiles.arcgis.com/arcgis/rest/services/World_Topo_Base/MapServer"
+            }),
+            new VectorTileLayer({
+                url: "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer"
             })
         ]
     });
