@@ -75,8 +75,8 @@ require([
     yesterday.setDate(yesterday.getDate() - 1);
     yesterday.setHours(0, 0, 0, 0);
 
-    const tomorrow = new Date(Date.now() + 86400000)
-    tomorrow.setDate(tomorrow.getDate() - 1);
+    const tomorrow = new Date()
+    tomorrow.setDate(tomorrow.getDate() + 1);
     tomorrow.setHours(23, 59, 59, 59);
 
     console.log(today, yesterday, tomorrow)
