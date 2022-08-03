@@ -77,7 +77,10 @@ require([
 
     const timeSlider = new TimeSlider({
         container: "timeSliderDiv",
-        fullTimeExtent: 
+        fullTimeExtent: {
+            start: yesterday,
+            end: tomorrow
+        }
     })
 
     map.add(apts);
