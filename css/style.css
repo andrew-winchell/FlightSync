@@ -18,3 +18,7 @@ html, body {
     right: 5%;
     bottom: 30px;
   }
+
+.esri-time-slider__previous, .esri-time-slider__next {
+    display: none;
+}
