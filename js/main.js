@@ -70,9 +70,13 @@ require([
         url: ""
     });
 
-    var today = new Date();
-    var yesterday = new Date(Date.now() - 86400000)
-    var tomorrow = new Date(Date.now() + 86400000)
+    const today = new Date();
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    yesterday.setUTCHours(0, 0, 0, 0);
+    const tomorrow = new Date(Date.now() + 86400000)
+    tomorrow.setDate(tomorrow.getDate() - 1);
+    tomorrow.setUTCHours(23, 59, 59, 59);
     console.log(today, yesterday, tomorrow)
 
     const timeSlider = new TimeSlider({
