@@ -71,21 +71,21 @@ require([
     });
 
     const today = new Date();
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    yesterday.setHours(0, 0, 0, 0);
+    const startTime = new Date();
+    startTime.setDate(startTime.getDate() - 1);
+    startTime.setHours(0, 0, 0, 0);
 
-    const tomorrow = new Date()
-    tomorrow.setDate(tomorrow.getDate() + 2);
-    tomorrow.setHours(0, 0, 0, 0);
+    const endTime = new Date()
+    endTime.setDate(endTime.getDate() + 2);
+    endTime.setHours(0, 0, 0, 0);
 
     const timeSlider = new TimeSlider({
         container: "timeSliderDiv",
         mode: "instant",
         timeVisible: true,
         fullTimeExtent: {
-            start: yesterday,
-            end: tomorrow
+            start: startTime,
+            end: endTime
         },
         timeExtent: {
             start: today,
