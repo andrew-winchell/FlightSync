@@ -19,6 +19,7 @@ html, body {
     bottom: 30px;
   }
 
+/* Remove the Previous/Next step buttons from the time slider display */
 .esri-time-slider__previous, .esri-time-slider__next {
     display: none;
 }
