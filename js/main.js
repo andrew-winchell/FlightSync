@@ -88,11 +88,11 @@ require([
         container: "timeSliderDiv",
         mode: "instant",
         timeVisible: true,
-        fullTimeExtent: {
+        fullTimeExtent: { //full 3 day time frame
             start: startTime,
             end: endTime
         },
-        timeExtent: {
+        timeExtent: { //current position of the time slider
             start: currentTime,
             end: currentTime
         },
