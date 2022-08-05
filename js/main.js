@@ -70,7 +70,8 @@ require([
     const flights = new GeoJSONLayer({
         url: "data/newFlights.geojson",
         timeInfo: {
-            startField: "UNIX_TIMESTAMP"
+            startField: "UNIX_TIMESTAMP",
+            endField: "UNIX_TIMESTAMP"
         }
     });
     map.add(flights);
