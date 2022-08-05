@@ -66,8 +66,8 @@ require([
         url: ""
     });
 
-    //flight paths geojson layer
-    const flightPaths = new GeoJSONLayer({
+    //flights geojson layer
+    const flights = new GeoJSONLayer({
         url: ""
     });
 
@@ -104,4 +104,19 @@ require([
           }
         }
     });
+
+    scene.whenLayerView(flights).then((flightsLV) => {
+        flightsLV.filter = {
+            timeExtent: timeSlider.timeExtent
+        };
+
+        timeSlider.watch("timeExtent", (timeExtent) => {
+            flightsLV.filter = {
+                timeExtent: {
+                    start,
+                    end
+                }
+            }
+        })
+    })
 })
