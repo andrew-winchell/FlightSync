@@ -68,9 +68,9 @@ require([
 
     //flights geojson layer
     const flights = new GeoJSONLayer({
-        url: "data/flights.geojson",
+        url: "data/flights2.geojson",
         timeInfo: {
-            startField: "TIME_INST",
+            startField: "TIME_INST2",
             interval: {
                 unit: "seconds",
                 value: 1
@@ -108,6 +108,7 @@ require([
     scene.whenLayerView(flights).then((flightsLV) => {
         const flightEnd = flights.timeInfo.fullTimeExtent.end;
         console.log(flightEnd)
+
         const start = new Date(2015, 7, 1);
         timeSlider.fullTimeExtent = {
             start: start,
