@@ -99,14 +99,6 @@ require([
         container: "timeSliderDiv",
         mode: "instant",
         timeVisible: true,
-        fullTimeExtent: { //full 3 day time frame
-            start: s1, //startTime,
-            end: e1 //endTime
-        },
-        timeExtent: { //current position of the time slider
-            start: s1, //currentTime,
-            end: s1 //currentTime
-        },
         playRate: 50,
         stops: {
           interval: {
@@ -116,7 +108,18 @@ require([
         }
     });
 
-    scene.whenLayerView(flights).then((flightsLV) => { 
+    scene.whenLayerView(flights).then((flightsLV) => {
+        const start = new Date(2015, 7, 1);
+        timeSlider.fullTimeExtent = {
+            start: start,
+            end: layer.timeInfo.fullTimeExtent.end
+        };
+
+        timeSlider.timeExtent = {
+            start: start,
+            end: start
+        };
+
         timeSlider.watch("timeExtent", () => {
             flights.definitionExpression = 
                 "TIME_INST <= " + timeSlider.timeExtent.end.getTime();
