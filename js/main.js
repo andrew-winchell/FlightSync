@@ -121,8 +121,7 @@ require([
         timeSlider.watch("timeExtent", (timeExtent) => {
             flightsLV.filter = {
                 timeExtent: {
-                    start,
-                    end
+                    currentTime
                 }
             }
         })
