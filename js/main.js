@@ -102,7 +102,7 @@ require([
     });
 
     scene.whenLayerView(flights).then((flightView) => {
-        console.log(flights.timeInfo.fullTimeExtent.start)
+        console.log(flights.timeInfo.startField)
         const start = new Date(2015, 7, 1);
         timeSlider.fullTimeExtent = {
             start: start,
