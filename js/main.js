@@ -70,7 +70,7 @@ require([
     const flights = new GeoJSONLayer({
         url: "data/flights2.geojson",
         timeInfo: {
-            startField: "TIME_INST2",
+            startField: new Date("TIME_INST2"),
             interval: {
                 unit: "seconds",
                 value: 1
