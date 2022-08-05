@@ -91,8 +91,8 @@ require([
     endTime.setDate(endTime.getDate() + 2);
     endTime.setHours(0, 0, 0, 0);
 
-    const s1 = new Date(2015, 08, 01);
-    const e1 = new Date(2015, 09, 01);
+    const s1 = new Date(2015, 7, 01);
+    const e1 = new Date(2015, 8, 01);
 
     //time slider widget
     const timeSlider = new TimeSlider({
@@ -107,7 +107,7 @@ require([
             start: s1, //currentTime,
             end: s1 //currentTime
         },
-        playRate: 200,
+        playRate: 50,
         stops: {
           interval: {
             value: 1,
