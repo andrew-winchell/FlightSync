@@ -113,7 +113,7 @@ require([
         end.setDate(end.getDate() + 1);
         timeSlider.timeExtent = {
             start,
-            end
+            end: start
         };
 
         timeSlider.watch("timeExtent", () => {
