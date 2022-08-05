@@ -90,10 +90,7 @@ require([
     const endTime = new Date()
     endTime.setDate(endTime.getDate() + 2);
     endTime.setHours(0, 0, 0, 0);
-
-    const s1 = new Date(2015, 7, 01);
-    const e1 = new Date(2015, 8, 01);
-
+    
     //time slider widget
     const timeSlider = new TimeSlider({
         container: "timeSliderDiv",
