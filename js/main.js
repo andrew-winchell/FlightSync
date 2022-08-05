@@ -91,9 +91,6 @@ require([
     endTime.setDate(endTime.getDate() + 2);
     endTime.setHours(0, 0, 0, 0);
 
-    const flightEnd = flights.timeInfo.fullTimeExtent.end;
-    console.log(flightEnd)
-
     //time slider widget
     const timeSlider = new TimeSlider({
         container: "timeSliderDiv",
@@ -109,6 +106,8 @@ require([
     });
 
     scene.whenLayerView(flights).then((flightsLV) => {
+        const flightEnd = flights.timeInfo.fullTimeExtent.end;
+        console.log(flightEnd)
         const start = new Date(2015, 7, 1);
         timeSlider.fullTimeExtent = {
             start: start,
