@@ -113,17 +113,10 @@ require([
         }
     });
 
-    scene.whenLayerView(flights).then((flightsLV) => {
-        flightsLV.filter = {
-            timeExtent: timeSlider.timeExtent
-        };
-
-        timeSlider.watch("timeExtent", (timeExtent) => {
-            flightsLV.filter = {
-                timeExtent: {
-                    currentTime
-                }
-            }
+    scene.whenLayerView(flights).then((flightsLV) => { 
+        timeSlider.watch("timeExtent", () => {
+            flights.definitionExpression = 
+                "TIME_INST <= " + timeSlider.timeExtent.end.getTime();
         })
     })
 })
