@@ -97,14 +97,14 @@ require([
         mode: "instant",
         timeVisible: true,
         fullTimeExtent: { //full 3 day time frame
-            start: startTime,
-            end: endTime
+            start: 2015-08-01, //startTime,
+            end: 2015-09-01//endTime
         },
         timeExtent: { //current position of the time slider
-            start: currentTime,
-            end: currentTime
+            start: 2015-08-01, //currentTime,
+            end: 2015-08-01 //currentTime
         },
-        playRate: 50,
+        playRate: 200,
         stops: {
           interval: {
             value: 1,
