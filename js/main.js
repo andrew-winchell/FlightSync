@@ -91,18 +91,21 @@ require([
     endTime.setDate(endTime.getDate() + 2);
     endTime.setHours(0, 0, 0, 0);
 
+    const s1 = new Date(2015-08-01);
+    const e1 = new Date(2015-09-01);
+
     //time slider widget
     const timeSlider = new TimeSlider({
         container: "timeSliderDiv",
         mode: "instant",
         timeVisible: true,
         fullTimeExtent: { //full 3 day time frame
-            start: 2015-08-01, //startTime,
-            end: 2015-09-01//endTime
+            start: s1, //startTime,
+            end: e1 //endTime
         },
         timeExtent: { //current position of the time slider
-            start: 2015-08-01, //currentTime,
-            end: 2015-08-01 //currentTime
+            start: s1, //currentTime,
+            end: s1 //currentTime
         },
         playRate: 200,
         stops: {
