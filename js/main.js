@@ -68,16 +68,11 @@ require([
 
     //flights geojson layer
     const flights = new GeoJSONLayer({
-        url: "data/flights2.geojson",
+        url: "data/flights.geojson",
         timeInfo: {
-            startField: new Date("TIME_INST2"),
-            interval: {
-                unit: "seconds",
-                value: 1
-            }
+            startField: "UNIX_TIME"
         }
     });
-    map.add(flights);
 
     //time extent variables for time slider widget
     //72hr window from the current day; day before and day after to midnight
@@ -105,24 +100,23 @@ require([
         }
     });
 
-    scene.whenLayerView(flights).then((flightsLV) => {
-        const flightEnd = flights.timeInfo.fullTimeExtent.end;
-        console.log(flightEnd)
-
+    scene.whenLayerView(flights).then((flightView) => {
         const start = new Date(2015, 7, 1);
         timeSlider.fullTimeExtent = {
             start: start,
             end: flights.timeInfo.fullTimeExtent.end
         };
 
+        let end = new Date(start);
+        end.setDate(end.getDate() + 1);
         timeSlider.timeExtent = {
-            start: start,
-            end: start
+            start,
+            end
         };
 
         timeSlider.watch("timeExtent", () => {
             flights.definitionExpression = 
-                "TIME_INST <= " + timeSlider.timeExtent.end.getTime();
+                "UNIX_TIME <= " + timeSlider.timeExtent.end.getTime();
         })
     })
 })
