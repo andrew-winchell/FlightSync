@@ -73,6 +73,7 @@ require([
             startField: "UNIX_TIME"
         }
     });
+    map.add(flights);
 
     //time extent variables for time slider widget
     //72hr window from the current day; day before and day after to midnight
