@@ -70,6 +70,7 @@ require([
     const flights = new GeoJSONLayer({
         url: "data/flights.geojson"
     });
+    map.add(flights);
 
     //time extent variables for time slider widget
     //72hr window from the current day; day before and day after to midnight
