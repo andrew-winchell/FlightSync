@@ -90,7 +90,7 @@ require([
     const endTime = new Date()
     endTime.setDate(endTime.getDate() + 2);
     endTime.setHours(0, 0, 0, 0);
-    
+
     //time slider widget
     const timeSlider = new TimeSlider({
         container: "timeSliderDiv",
@@ -109,7 +109,7 @@ require([
         const start = new Date(2015, 7, 1);
         timeSlider.fullTimeExtent = {
             start: start,
-            end: layer.timeInfo.fullTimeExtent.end
+            end: flights.timeInfo.fullTimeExtent.end
         };
 
         timeSlider.timeExtent = {
