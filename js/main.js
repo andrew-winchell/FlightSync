@@ -68,7 +68,7 @@ require([
 
     //flights geojson layer
     const flights = new GeoJSONLayer({
-        url: ""
+        url: "data/flights.geojson"
     });
 
     //time extent variables for time slider widget
