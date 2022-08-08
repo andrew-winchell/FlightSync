@@ -1,4 +1,5 @@
 require([
+    "esri/config",
     "esri/core/promiseUtils",
     "esri/identity/OAuthInfo",
     "esri/identity/IdentityManager",
@@ -10,7 +11,7 @@ require([
     "esri/layers/ElevationLayer",
     "esri/Basemap",
     "esri/widgets/TimeSlider"
-], function (promiseUtils, OAuthInfo, esriID, Map, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, ElevationLayer, Basemap, TimeSlider) {
+], function (esriConfig, promiseUtils, OAuthInfo, esriID, Map, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, ElevationLayer, Basemap, TimeSlider) {
 
     //OAuth certification process
     //Required to access secure content from AGOL
