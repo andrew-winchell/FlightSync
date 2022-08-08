@@ -72,14 +72,14 @@ require([
         url: "data/newerFlights.geojson",
         fields: [
             {
-               "name": "UNIX_TIMESTAMP",
-               "alias": "UNIX_TIMESTAMP",
+               "name": "DATE",
+               "alias": "DATE",
                "type": "date"
              }
         ],
         timeInfo: {
-            startField: "UNIX_TIMESTAMP",
-            endField: "UNIX_TIMESTAMP"
+            startField: "DATE",
+            endField: "DATE"
         }
     });
     map.add(flights);
