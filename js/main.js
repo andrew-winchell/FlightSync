@@ -83,6 +83,13 @@ require([
     //flights geojson layer
     const flights = new GeoJSONLayer({
         url: "data/newerFlights.geojson",
+        fields: [
+            {
+               "name": "unixDate",
+               "alias": "unixDate",
+               "type": "date"
+             }
+        ],
         timeInfo: {
             startField: "unixDate",
             endField: "unixDate"
