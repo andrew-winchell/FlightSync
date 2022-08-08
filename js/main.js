@@ -68,10 +68,10 @@ require([
 
     //flights geojson layer
     const flights = new GeoJSONLayer({
-        url: "data/newFlights.geojson",
+        url: "data/newerFlights.geojson",
         timeInfo: {
-            startField: "DATE",
-            endField: "DATE"
+            startField: "ESRI_DATE",
+            endField: "ESRI_DATE"
         }
     });
     map.add(flights);
