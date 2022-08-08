@@ -67,32 +67,19 @@ require([
         url: ""
     });
 
-    esriConfig.request.interceptors.push({
-        urls: "data/newerFlights.geojson",
-        after: function(response) {
-            if (response.url?.valueOf().toLowerCase().includes("earthquakes")) {
-                const geojson = response.data;
-                geojson.features.forEach((feature) => {
-                    const unixDate = Date.parse(feature.properties.isoDate);
-                    feature.properties.unixDate = unixDate;
-                });
-            }
-        }  
-    });
-
     //flights geojson layer
     const flights = new GeoJSONLayer({
         url: "data/newerFlights.geojson",
         fields: [
             {
-               "name": "unixDate",
-               "alias": "unixDate",
+               "name": "UNIX_TIMESTAMP",
+               "alias": "UNIX_TIMESTAMP",
                "type": "date"
              }
         ],
         timeInfo: {
-            startField: "unixDate",
-            endField: "unixDate"
+            startField: "UNIX_TIMESTAMP",
+            endField: "UNIX_TIMESTAMP"
         }
     });
     map.add(flights);
