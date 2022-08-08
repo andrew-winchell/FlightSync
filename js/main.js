@@ -70,6 +70,7 @@ require([
     esriConfig.request.interceptors.push({
         urls: "data/newFlights.geojson",
         after: function(response) {
+            console.log(response.url?.valueOf().toLowerCase())
             if (response.url?.valueOf().toLowerCase().includes("newflights")) {
                 const geojson = response.data;
                 geojson.features.forEach((feature) => {
