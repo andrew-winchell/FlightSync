@@ -68,7 +68,7 @@ require([
     });
 
     esriConfig.request.interceptors.push({
-        urls: geojsonUrl,
+        urls: "data/newFlights.geojson",
         after: function(response) {
             if (response.url?.valueOf().toLowerCase().includes("newflights")) {
                 const geojson = response.data;
