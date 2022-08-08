@@ -67,19 +67,32 @@ require([
         url: ""
     });
 
+    esriConfig.request.interceptors.push({
+        urls: geojsonUrl,
+        after: function(response) {
+            if (response.url?.valueOf().toLowerCase().includes("newflights")) {
+                const geojson = response.data;
+                geojson.features.forEach((feature) => {
+                    const unixDate = Date.parse(feature.properties.isoDate);
+                    feature.properties.unixDate = unixDate;
+                });
+            }
+        }
+    });
+
     //flights geojson layer
     const flights = new GeoJSONLayer({
         url: "data/newerFlights.geojson",
         fields: [
-            {
-               "name": "DATE",
-               "alias": "DATE",
-               "type": "date"
-             }
+          {
+             "name": "unixDate",
+             "alias": "unixDate",
+             "type": "date"
+           }
         ],
         timeInfo: {
-            startField: "DATE",
-            endField: "DATE"
+            startField: "unixDate",
+            endField: "unixDate"
         }
     });
     map.add(flights);
