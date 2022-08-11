@@ -147,7 +147,7 @@ require([
             endRange.setSeconds(timeSlider.timeExtent.end.getSeconds() + 1);
 
             flights.definitionExpression = 
-                'MILLISECONDS <= ' + endRange.getTime() //+ " AND MILLISECONDS >= " + startRange  //" + timeSlider.timeExtent.end.getTime();
+                'MILLISECONDS <= ' + endRange.getTime() + " AND MILLISECONDS >= " + startRange.getTime()  //" + timeSlider.timeExtent.end.getTime();
         })
     })
 })
