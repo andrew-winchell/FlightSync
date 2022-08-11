@@ -135,13 +135,13 @@ require([
             startRange.setDate(timeSlider.timeExtent.end.getDate());
             startRange.setHours(timeSlider.timeExtent.end.getHours());
             startRange.setMinutes(timeSlider.timeExtent.end.getMinutes());
-            startRange.setSeconds(timeSlider.timeExtent.end.getSeconds() - 1);
+            startRange.setSeconds(timeSlider.timeExtent.end.getSeconds() - 10);
 
             endRange = new Date();
             endRange.setDate(timeSlider.timeExtent.end.getDate());
             endRange.setHours(timeSlider.timeExtent.end.getHours());
             endRange.setMinutes(timeSlider.timeExtent.end.getMinutes());
-            endRange.setSeconds(timeSlider.timeExtent.end.getSeconds() + 1);
+            endRange.setSeconds(timeSlider.timeExtent.end.getSeconds() + 10);
 
             flights.definitionExpression = 
                 'MILLISECONDS <= ' + endRange.getTime() + " AND MILLISECONDS >= " + startRange.getTime()  //" + timeSlider.timeExtent.end.getTime();
