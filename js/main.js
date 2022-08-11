@@ -115,7 +115,8 @@ require([
         container: "timeSliderDiv",
         mode: "instant",
         timeVisible: true,
-        stops: null
+        stops: null,
+        loop: true
     });
 
     scene.whenLayerView(flights).then((flightView) => {
