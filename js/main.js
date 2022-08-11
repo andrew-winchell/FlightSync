@@ -119,7 +119,7 @@ require([
         stops: {
           interval: {
             value: 1,
-            unit: "millisecond"
+            unit: "minute"
           }
         }
     });
