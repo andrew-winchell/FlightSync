@@ -129,6 +129,7 @@ require([
             start: flights.timeInfo.fullTimeExtent.start
         };
 
+        console.log(timeSlider.timeExtent.end.getTime());
         timeSlider.watch("timeExtent", () => {
             flights.definitionExpression = 
                 "MILLISECONDS <= " + timeSlider.timeExtent.end.getTime();
