@@ -116,7 +116,7 @@ require([
         mode: "instant",
         timeVisible: true,
         interval: {
-            value: 0.5,
+            value: 0.25,
             unit: "seconds"
           },
         loop: true
@@ -134,8 +134,13 @@ require([
 
         timeSlider.watch("timeExtent", () => {
             console.log(timeSlider.timeExtent.end);
+            startRange = timeSlider.timeExtent.end.getTime();
+            startRange.setSeconds(startRange.getSeconds() -1);
+
+            endRange = timeSlider.timeExtent.end.getTime();
+            endRange.setSeconds(endRange.getSeconds() + 1);
             flights.definitionExpression = 
-                "MILLISECONDS <= " + timeSlider.timeExtent.end.getTime();
+                `MILLISECONDS <= ${endRange} AND MILLISECONDS >= ${startRange}`   //" + timeSlider.timeExtent.end.getTime();
         })
     })
 })
