@@ -130,22 +130,8 @@ require([
         };
 
         timeSlider.watch("timeExtent", () => {
-            console.log(typeof(timeSlider.timeExtent.end));
-            startRange = new Date();
-            startRange.setDate(timeSlider.timeExtent.end.getDate());
-            startRange.setHours(timeSlider.timeExtent.end.getHours());
-            startRange.setMinutes(timeSlider.timeExtent.end.getMinutes());
-            startRange.setSeconds(timeSlider.timeExtent.end.getSeconds());
-
-            endRange = new Date();
-            endRange.setDate(timeSlider.timeExtent.end.getDate());
-            endRange.setHours(timeSlider.timeExtent.end.getHours());
-            endRange.setMinutes(timeSlider.timeExtent.end.getMinutes());
-            endRange.setSeconds(timeSlider.timeExtent.end.getSeconds());
-            console.log(endRange)
-
             flights.definitionExpression = 
-                'MILLISECONDS <= ' + (timeSlider.timeExtent.end.getTime() + 5000) + 'MILLISECONDS >= ' + (timeSlider.timeExtent.end.getTime() - 5000);
+                'MILLISECONDS <= ' + (timeSlider.timeExtent.end.getTime() + 5000) + 'AND MILLISECONDS >= ' + (timeSlider.timeExtent.end.getTime() - 5000);
         })
     })
 })
