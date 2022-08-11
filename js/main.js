@@ -115,7 +115,7 @@ require([
         container: "timeSliderDiv",
         mode: "instant",
         timeVisible: true,
-        playRate: 100,
+        playRate: 1000,
         stops: {
           interval: {
             value: 1,
