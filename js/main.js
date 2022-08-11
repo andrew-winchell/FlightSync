@@ -83,17 +83,17 @@ require([
 
     //flights geojson layer
     const flights = new GeoJSONLayer({
-        url: "data/newerFlights.geojson",
+        url: "data/newFlights.geojson",
         fields: [
           {
-             "name": "unixDate",
-             "alias": "unixDate",
+             "name": "UNIX_TIMESTAMP",
+             "alias": "UNIX_TIMESTAMP",
              "type": "date"
            }
         ],
         timeInfo: {
-            startField: "unixDate",
-            endField: "unixDate"
+            startField: "UNIX_TIMESTAMP",
+            endField: "UNIX_TIMESTAMP"
         }
     });
     map.add(flights);
@@ -141,7 +141,7 @@ require([
 
         timeSlider.watch("timeExtent", () => {
             flights.definitionExpression = 
-                "UNIX_TIME <= " + timeSlider.timeExtent.end.getTime();
+                "UNIX_TIMESTAMP <= " + timeSlider.timeExtent.end.getTime();
         })
     })
 })
