@@ -125,9 +125,8 @@ require([
     });
 
     scene.whenLayerView(flights).then((flightView) => {
-        const start = new Date(2015, 7, 1);
         timeSlider.fullTimeExtent = {
-            start: start,
+            start: flights.timeInfo.fullTimeExtent.start,
             end: flights.timeInfo.fullTimeExtent.end
         };
 
