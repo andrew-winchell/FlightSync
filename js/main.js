@@ -135,10 +135,11 @@ require([
         timeSlider.watch("timeExtent", () => {
             console.log(timeSlider.timeExtent.end);
             startRange = timeSlider.timeExtent.end.getTime();
-            startRange.setSeconds(startRange.getSeconds() -1);
+            console.log(typeof(startRange));
+            startRange.setSeconds(startRange.setSeconds() -1);
 
             endRange = timeSlider.timeExtent.end.getTime();
-            endRange.setSeconds(endRange.getSeconds() + 1);
+            endRange.setSeconds(endRange.setSeconds() + 1);
             flights.definitionExpression = 
                 `MILLISECONDS <= ${endRange} AND MILLISECONDS >= ${startRange}`   //" + timeSlider.timeExtent.end.getTime();
         })
