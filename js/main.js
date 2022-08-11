@@ -115,6 +115,12 @@ require([
         container: "timeSliderDiv",
         mode: "instant",
         timeVisible: true,
+        stops: {
+            interval: {
+                value: 1,
+                unit: "months"
+            }
+        },
         loop: true
     });
 
@@ -127,13 +133,6 @@ require([
         timeSlider.timeExtent = {
             start: flights.timeInfo.fullTimeExtent.start
         };
-
-        timeSlider.stops = {
-            interval: {
-                value: 1,
-                units: "seconds"
-            }
-        }
 
         timeSlider.watch("timeExtent", () => {
             flights.definitionExpression = 
