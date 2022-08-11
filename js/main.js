@@ -115,7 +115,6 @@ require([
         container: "timeSliderDiv",
         mode: "instant",
         timeVisible: true,
-        playRate: 1000,
         stops: null
     });
 
