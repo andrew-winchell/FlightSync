@@ -121,7 +121,7 @@ require([
                 unit: "seconds"
             }
         },
-        playRate: 50,
+        playRate: 150,
         loop: true
     });
 
