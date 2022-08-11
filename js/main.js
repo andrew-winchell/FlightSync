@@ -119,7 +119,7 @@ require([
         stops: {
           interval: {
             value: 1,
-            unit: "second"
+            unit: "millisecond"
           }
         }
     });
@@ -130,11 +130,8 @@ require([
             end: flights.timeInfo.fullTimeExtent.end
         };
 
-        let end = new Date(start);
-        end.setDate(end.getDate() + 1);
         timeSlider.timeExtent = {
-            start,
-            end: start
+            start: flights.timeInfo.fullTimeExtent.start
         };
 
         timeSlider.watch("timeExtent", () => {
