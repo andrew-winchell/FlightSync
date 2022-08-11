@@ -116,12 +116,7 @@ require([
         mode: "instant",
         timeVisible: true,
         playRate: 1000,
-        stops: {
-          interval: {
-            value: 1,
-            unit: "minute"
-          }
-        }
+        stops: null
     });
 
     scene.whenLayerView(flights).then((flightView) => {
