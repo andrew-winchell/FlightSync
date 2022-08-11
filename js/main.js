@@ -115,7 +115,10 @@ require([
         container: "timeSliderDiv",
         mode: "instant",
         timeVisible: true,
-        stops: null,
+        interval: {
+            value: 1,
+            unit: "seconds"
+          },
         loop: true
     });
 
@@ -129,7 +132,7 @@ require([
             start: flights.timeInfo.fullTimeExtent.start
         };
 
-        console.log(timeSlider.timeExtent.end.getTime());
+        console.log(timeSlider.timeExtent.end);
         timeSlider.watch("timeExtent", () => {
             flights.definitionExpression = 
                 "MILLISECONDS <= " + timeSlider.timeExtent.end.getTime();
