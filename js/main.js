@@ -121,6 +121,7 @@ require([
                 unit: "seconds"
             }
         },
+        playRate: 500,
         loop: true
     });
 
@@ -136,7 +137,7 @@ require([
 
         timeSlider.watch("timeExtent", () => {
             flights.definitionExpression = 
-                'MILLISECONDS <= ' + (timeSlider.timeExtent.end.getTime() + 1000) + ' AND MILLISECONDS >= ' + (timeSlider.timeExtent.end.getTime() - 1000);
+                'MILLISECONDS <= ' + (timeSlider.timeExtent.end.getTime() + 5000) + ' AND MILLISECONDS >= ' + (timeSlider.timeExtent.end.getTime() - 5000);
         })
     })
 })
