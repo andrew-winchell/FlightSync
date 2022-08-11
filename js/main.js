@@ -142,6 +142,7 @@ require([
             endRange.setHours(timeSlider.timeExtent.end.getHours());
             endRange.setMinutes(timeSlider.timeExtent.end.getMinutes());
             endRange.setSeconds(timeSlider.timeExtent.end.getSeconds());
+            console.log(endRange)
 
             flights.definitionExpression = 
                 'MILLISECONDS <= ' + endRange.getTime()// + " AND MILLISECONDS >= " + startRange.getTime()  //" + timeSlider.timeExtent.end.getTime();
