@@ -118,7 +118,7 @@ require([
         stops: {
             interval: {
                 value: 1,
-                unit: "months"
+                unit: "seconds"
             }
         },
         loop: true
