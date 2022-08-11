@@ -145,7 +145,7 @@ require([
             console.log(endRange)
 
             flights.definitionExpression = 
-                'MILLISECONDS <= ' + endRange.getTime()// + " AND MILLISECONDS >= " + startRange.getTime()  //" + timeSlider.timeExtent.end.getTime();
+                'MILLISECONDS <= ' + timeSlider.timeExtent.end.getTime();
         })
     })
 })
