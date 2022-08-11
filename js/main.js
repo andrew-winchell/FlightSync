@@ -115,7 +115,7 @@ require([
         container: "timeSliderDiv",
         mode: "instant",
         timeVisible: true,
-        playRate: 50,
+        playRate: 1,
         stops: {
           interval: {
             value: 1,
@@ -125,7 +125,6 @@ require([
     });
 
     scene.whenLayerView(flights).then((flightView) => {
-        console.log(flights.timeInfo.fullTimeExtent)
         const start = new Date(2015, 7, 1);
         timeSlider.fullTimeExtent = {
             start: start,
