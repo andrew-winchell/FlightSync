@@ -134,12 +134,18 @@ require([
 
         timeSlider.watch("timeExtent", () => {
             console.log(timeSlider.timeExtent.end);
-            startRange = timeSlider.timeExtent.end.getTime();
-            console.log(typeof(startRange));
-            startRange.setSeconds(startRange.setSeconds() -1);
+            startRange = new Date();
+            startRange.setDate(timeSlider.timeExtent.end.getDate());
+            startRange.setHours(timeSlider.timeExtent.end.geHours());
+            startRange.setMinutes(timeSlider.timeExtent.end.getMinutes());
+            startRange.setSeconds(timeSlider.timeExtent.end.getSeconds() - 1);
 
-            endRange = timeSlider.timeExtent.end.getTime();
-            endRange.setSeconds(endRange.setSeconds() + 1);
+            endRange = new Date();
+            endRange.setDate(timeSlider.timeExtent.end.getDate());
+            endRange.setHours(timeSlider.timeExtent.end.geHours());
+            endRange.setMinutes(timeSlider.timeExtent.end.getMinutes());
+            endRange.setSeconds(timeSlider.timeExtent.end.getSeconds() + 1);
+
             flights.definitionExpression = 
                 `MILLISECONDS <= ${endRange} AND MILLISECONDS >= ${startRange}`   //" + timeSlider.timeExtent.end.getTime();
         })
