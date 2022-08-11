@@ -115,10 +115,7 @@ require([
         container: "timeSliderDiv",
         mode: "instant",
         timeVisible: true,
-        interval: {
-            value: 0.25,
-            unit: "seconds"
-          },
+        stops: null,
         loop: true
     });
 
