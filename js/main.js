@@ -11,7 +11,6 @@ require([
     "esri/layers/TileLayer",
     "esri/layers/ElevationLayer",
     "esri/widgets/TimeSlider",
-    "esri/smartMapping/statistics/uniqueValues",
     "esri/symbols/WebStyleSymbol"
 ], function (Map, Basemap, esriConfig, promiseUtils, OAuthInfo, esriID, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, ElevationLayer, TimeSlider, WebStyleSymbol) {
 
@@ -100,7 +99,7 @@ require([
         type: "simple",
         symbol: planeSymbol
     }
-    
+
     map.add(flights);
 
     //time extent variables for time slider widget
