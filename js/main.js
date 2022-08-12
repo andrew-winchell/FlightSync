@@ -127,7 +127,6 @@ require([
     });
 
     scene.whenLayerView(flights).then((flightView) => {
-        flights.getFieldUsageInfo("ID");
         timeSlider.fullTimeExtent = {
             start: flights.timeInfo.fullTimeExtent.start,
             end: flights.timeInfo.fullTimeExtent.end
@@ -138,17 +137,9 @@ require([
         };
 
         timeSlider.watch("timeExtent", () => {
-            uniqueValues({
-                layer: flights,
-                field: "ID"
-            }).then((values) => {
-                let unique = values.uniqueValuesInfos;
-                unique.forEach(function(info){
-                    console.log("ID: ", info.value, " # OF GOETRAXS: ", info.count);
-                });
             })
             flights.definitionExpression = 
-                'MILLISECONDS <= ' + (timeSlider.timeExtent.end.getTime() + 15000) + ' AND MILLISECONDS >= ' + (timeSlider.timeExtent.end.getTime() - 15000);
+                'MILLISECONDS <= ' + (timeSlider.timeExtent.end.getTime() + 15000) + ' AND MILLISECONDS >= ' + (timeSlider.timeExtent.end.getTime() - 15000) + " AND IF(1=1)";
         })
     })
 })
