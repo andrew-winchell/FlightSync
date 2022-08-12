@@ -139,8 +139,7 @@ require([
         timeSlider.watch("timeExtent", () => {
             flights.definitionExpression = 
                 'MILLISECONDS <= ' + (timeSlider.timeExtent.end.getTime() + 15000)
-                 + ' AND MILLISECONDS >= ' + (timeSlider.timeExtent.end.getTime() - 15000)
-                 + " AND (iif(1=1, true, false))";
+                 + ' AND MILLISECONDS >= ' + (timeSlider.timeExtent.end.getTime() - 15000);
         })
     })
 })
