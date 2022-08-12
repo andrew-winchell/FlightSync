@@ -68,20 +68,6 @@ require([
         url: ""
     });
 
-    esriConfig.request.interceptors.push({
-        urls: "data/newFlights.geojson",
-        after: function(response) {
-            console.log(response.url?.valueOf().toLowerCase())
-            if (response.url?.valueOf().toLowerCase().includes("newflights")) {
-                const geojson = response.data;
-                geojson.features.forEach((feature) => {
-                    const unixDate = Date.parse(feature.properties.isoDate);
-                    feature.properties.unixDate = unixDate;
-                });
-            }
-        }
-    });
-
     //flights geojson layer
     const flights = new GeoJSONLayer({
         url: "data/flights.geojson",
