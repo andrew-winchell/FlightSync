@@ -10,8 +10,9 @@ require([
     "esri/layers/TileLayer",
     "esri/layers/ElevationLayer",
     "esri/Basemap",
-    "esri/widgets/TimeSlider"
-], function (esriConfig, promiseUtils, OAuthInfo, esriID, Map, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, ElevationLayer, Basemap, TimeSlider) {
+    "esri/widgets/TimeSlider",
+    "esri/smartMapping/statistics/uniqueValues"
+], function (esriConfig, promiseUtils, OAuthInfo, esriID, Map, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, ElevationLayer, Basemap, TimeSlider, uniqueValues) {
 
     //OAuth certification process
     //Required to access secure content from AGOL
@@ -136,6 +137,15 @@ require([
         };
 
         timeSlider.watch("timeExtent", () => {
+            uniqueValues({
+                layer: flights,
+                field: "ID"
+            }).then((values) => {
+                let unique = values.uniqueValuesInfos;
+                unique.forEach(function(info){
+                    console.log("ID: ", info.value, " # OF GOETRAXS: ", info.count);
+                });
+            })
             flights.definitionExpression = 
                 'MILLISECONDS <= ' + (timeSlider.timeExtent.end.getTime() + 15000) + ' AND MILLISECONDS >= ' + (timeSlider.timeExtent.end.getTime() - 15000);
         })
