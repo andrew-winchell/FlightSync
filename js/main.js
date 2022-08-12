@@ -68,14 +68,14 @@ require([
         url: ""
     });
 
-    const planeSymbol = new WebStyleSymbol({
-        name: "Airplane_Large_Passenger",
-        styleName: "EsriRealisticTransportationStyle"
-      });
-
     //flights geojson layer
     const flights = new GeoJSONLayer({
         url: "data/flights.geojson",
+        renderer: {
+            type: "web-style",
+            styleName: "EsriRealisticTransportationStyle",
+            name: "Aiplane_Large_Passenger"
+        },
         fields: [
             {
              "name": "MILLISECONDS",
@@ -94,11 +94,6 @@ require([
         },
         definitionExpression: "1=0"
     });
-
-    flights.renderer = {
-        type: "simple",
-        symbol: planeSymbol
-    }
 
     map.add(flights);
 
