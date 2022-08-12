@@ -140,7 +140,7 @@ require([
             flights.definitionExpression = 
                 'MILLISECONDS <= ' + (timeSlider.timeExtent.end.getTime() + 15000)
                  + ' AND MILLISECONDS >= ' + (timeSlider.timeExtent.end.getTime() - 15000)
-                 + " AND IF(1=1)";
+                 + " AND (IF(1=1) true)";
         })
     })
 })
