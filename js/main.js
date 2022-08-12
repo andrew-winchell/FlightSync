@@ -81,7 +81,7 @@ require([
              "name": "ID",
              "alias": "ID",
              "type": "string"
-            },
+            }
         ],
         timeInfo: {
             startField: "MILLISECONDS",
