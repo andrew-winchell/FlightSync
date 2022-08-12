@@ -71,13 +71,7 @@ require([
     //flights geojson layer
     const flights = new GeoJSONLayer({
         url: "data/flights.geojson",
-        fields: [
-          {
-             "name": "MILLISECONDS",
-             "alias": "MILLISECONDS",
-             "type": "date"
-           }
-        ],
+        fields: ["*"],
         timeInfo: {
             startField: "MILLISECONDS",
             endField: "MILLISECONDS"
