@@ -81,7 +81,8 @@ require([
         timeInfo: {
             startField: "MILLISECONDS",
             endField: "MILLISECONDS"
-        }
+        },
+        definitionExpression: "1=0"
     });
     map.add(flights);
 
