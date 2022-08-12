@@ -1,18 +1,19 @@
 require([
+    "esri/Map",
+    "esri/Basemap",
     "esri/config",
     "esri/core/promiseUtils",
     "esri/identity/OAuthInfo",
     "esri/identity/IdentityManager",
-    "esri/Map",
     "esri/views/SceneView",
     "esri/layers/GeoJSONLayer",
     "esri/layers/FeatureLayer",
     "esri/layers/TileLayer",
     "esri/layers/ElevationLayer",
-    "esri/Basemap",
     "esri/widgets/TimeSlider",
-    "esri/smartMapping/statistics/uniqueValues"
-], function (esriConfig, promiseUtils, OAuthInfo, esriID, Map, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, ElevationLayer, Basemap, TimeSlider, uniqueValues) {
+    "esri/smartMapping/statistics/uniqueValues",
+    "esri/symbols/WebStyleSymbol"
+], function (Map, Basemap, esriConfig, promiseUtils, OAuthInfo, esriID, SceneView, GeoJSONLayer, FeatureLayer, TileLayer, ElevationLayer, TimeSlider, WebStyleSymbol) {
 
     //OAuth certification process
     //Required to access secure content from AGOL
@@ -68,6 +69,11 @@ require([
         url: ""
     });
 
+    const planeSymbol = new WebStyleSymbol({
+        name: "Airplane_Large_Passenger",
+        styleName: "EsriRealisticTransportationStyle"
+      });
+
     //flights geojson layer
     const flights = new GeoJSONLayer({
         url: "data/flights.geojson",
@@ -89,6 +95,12 @@ require([
         },
         definitionExpression: "1=0"
     });
+
+    flights.renderer = {
+        type: "simple",
+        symbol: planeSymbol
+    }
+    
     map.add(flights);
 
     //time extent variables for time slider widget
