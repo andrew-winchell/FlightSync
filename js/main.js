@@ -120,18 +120,18 @@ require([
 
     scene.whenLayerView(flights).then((flightView) => {
         timeSlider.fullTimeExtent = {
-            start: flights.timeInfo.fullTimeExtent.start,
-            end: flights.timeInfo.fullTimeExtent.end
+            start: Math.round(flights.timeInfo.fullTimeExtent.start),
+            end: Math.round(flights.timeInfo.fullTimeExtent.end)
         };
 
         timeSlider.timeExtent = {
-            start: flights.timeInfo.fullTimeExtent.start
+            start: Math.round(flights.timeInfo.fullTimeExtent.start)
         };
 
         timeSlider.watch("timeExtent", () => {
             flights.definitionExpression = 
-                "MILLISECONDS <= " + (timeSlider.timeExtent.end.getTime() + 30000)
-                + " AND MILLISECONDS >= " + (timeSlider.timeExtent.end.getTime() - 30000);
+                "MILLISECONDS <= " + (Math.round(timeSlider.timeExtent.end.getTime()) + 30000)
+                + " AND MILLISECONDS >= " + (Math.round(timeSlider.timeExtent.end.getTime()) - 30000);
         })
     })
 })
