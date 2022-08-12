@@ -127,6 +127,7 @@ require([
     });
 
     scene.whenLayerView(flights).then((flightView) => {
+        flights.getFieldUsageInfo("ID");
         timeSlider.fullTimeExtent = {
             start: flights.timeInfo.fullTimeExtent.start,
             end: flights.timeInfo.fullTimeExtent.end
